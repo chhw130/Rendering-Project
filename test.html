@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+  <head>
+    <title>프로젝트</title>
+    <link rel="stylesheet" href="./test.css" />
+  </head>
+
+  <body>
+      <header>
+        <div>
+          <div  id="menu"> 
+            <a>COS LAB</a>
+            <a>ABOUT</a>
+            <a>BRAND</a>
+            <a id="shop">SHOP</a>
+            <div id="dropdown-content">
+              <a href="#">FACE</a>
+              <a href="#">BODY</a>
+              <a href="#">LIP</a>
+              <a href="#">HAIR</a>
+              <a href="#">ETC</a>
+            </div>
+            <a>EVENT</a>
+            <a>REVIEW</a>
+            <a>Language</a>
+            <a>한국어</a>
+          </div>
+          
+      </div>
+      </header>
+      <!-- 햄버거버튼 구현 -->
+      <div>
+        <input type="checkbox" id="ham">
+        <label for="ham">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <div class="sidebar">
+
+        </div>
+      </div>
+    
+    
+
+    <div id="modal" class="modal-overlay">
+      <div class="modal-window">
+        <div class="title">
+          <h2>제품명</h2>
+          <table>           
+            <tr>
+               <td rowspan="2"><img class="product2" src="./다운로드.png" /></td>
+               <td>color</td>
+               <td>
+                <ul>
+                  <li class="white" value= 1>⚫</li>
+                  <li class="black" value= 2>⚪</li>
+               </ul> 
+               </td>
+            </tr>
+              <tr>
+                  <td> size</td>
+                  <td> 
+                    <ul id="size">
+                      <li id="size1" value="3">3</li>
+                      <li id="size2" value="5">5</li>
+                      <li id="size3" value="7">7</li>
+                    </ul>
+                  </td>
+              </tr>
+            </tbody>
+          
+        </table>
+        <div id="quantity">
+          <!-- <input  id="minus" type="button" value="-"> -->
+          <input  id="val" type="number" value="1" min="1" max="10">
+          <!-- <input  id="plus" type="button" value="+"> -->
+        </div>
+
+          <input class="close" id="getItem" type="button"  value="제품담기" />
+          <input class="close" id="closeBasket" type="button" value="취소" />
+        
+        </div>
+      </div>
+    </div>
+  
+
+  <div>
+    <a>
+      <div class="screen">
+        <input  class="product" type="button" value="장바구니">       
+        <div class="bottom">2222222222</div>
+        <img   src="./다운로드.png" />
+      </div>
+      <div>
+      </div>
+    </a>
+  </div>
+  
+    
+  <script src="./test.js"></script>
+
+  </body>
+</html>
