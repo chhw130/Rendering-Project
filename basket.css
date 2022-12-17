@@ -1,0 +1,19 @@
+body{
+    height: 100%;
+}
+
+#basketContainer{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#basketContainer div:nth-child(even){
+    background-color: white;
+    height: 200px;
+}
+
+#basketContainer div:nth-child(odd){
+    background-color:white;
+    height: 200px;
+}

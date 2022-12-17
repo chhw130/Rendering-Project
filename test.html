@@ -2,13 +2,19 @@
   <head>
     <title>프로젝트</title>
     <link rel="stylesheet" href="./test.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
+      <!--고정 헤더  -->
       <header>
+        
+          <a id="cosLab" href="">COS LAB</a>
+      
+        
+          
         <div>
           <div  id="menu"> 
-            <a>COS LAB</a>
             <a>ABOUT</a>
             <a>BRAND</a>
             <a id="shop">SHOP</a>
@@ -24,9 +30,10 @@
             <a>Language</a>
             <a>한국어</a>
           </div>
-          
       </div>
       </header>
+      
+      
       <!-- 햄버거버튼 구현 -->
       <div>
         <input type="checkbox" id="ham">
@@ -34,26 +41,124 @@
           <span></span>
           <span></span>
           <span></span>
+
+      <!--햄버거버튼 사이드바  -->
         </label>
         <div class="sidebar">
-
-        </div>
+          <div>
+            <div>
+              <div  id="menu"> 
+                <a>COS LAB</a>
+                <a>ABOUT</a>
+                <a>BRAND</a>
+                <a id="shop">SHOP</a>
+                <div id="dropdown-content">
+                  <a href="#">FACE</a>
+                  <a href="#">BODY</a>
+                  <a href="#">LIP</a>
+                  <a href="#">HAIR</a>
+                  <a href="#">ETC</a>
+                </div>
+                <a>EVENT</a>
+              </div>
+          </div>
+          </div>
+          </div>
       </div>
+    <div id="wholeContainer">
+    <div id="container3">
+
+
+      <!-- 상단섹션 -->
+      <div class="slide">
+        <div class="slide_item">
+            <img src="banner1.jpg">
+            <div class="text">
+                <h3>당신의 하루를 <br>
+                    사소하게 넘기지 마세요</h3>
+                <span>탈모증상완화에 도움을 주고 볼륨을 살려줍니다. <br>
+                    묵은 각질 및 노폐물 완전 세정</span>
+            </div>
+        </div>
+
+        <div class="slide_item">
+            <img src="banner2.jpg">
+            <div class="text">
+                <h3>옴므랩 올인원<br>
+                    프레시 스킨케어 세트</h3>
+                <span>촉촉한 에멀전 타입으로 유분과 수분의 밸런스를 조절 <br>
+                    피부에 유분을 잡아주고 수분은 채워줍니다.</span>
+            </div>
+        </div>
+        <div class="slide_item">
+            <img src="banner3.jpg">
+            <div class="text">
+                <h3>세라마이딘<br>
+                    페이셜 베리어 마스크</h3>
+                <span>수분 충전과 영양 케어를 한 번에 도와주는 <br>
+                    고보습 마스크 시트를 만나보세요</span>
+            </div>
+        </div>
+
+        <!-- <div class="slide_item">5</div> -->
+        <div class="slide_prev_button slide_button">◀</div>
+        <div class="slide_next_button slide_button">▶</div>
+    </div>
+</div>
     
+    <!-- 장바구니에 담을 상품 이미지 -->
+  <div>
+    <ul>
+      <li>
+        <a>
+          <div class="screen">
+            <input  class="product" type="button" value="장바구니">       
+            <div class="bottom">2222222222</div>
+            <img alt="cream"  src="./다운로드.png" />
+          </div>
+      </a>
+      </li>
+      <li>
+        <a>
+          <div class="screen">
+          <input  class="product" type="button" value="장바구니">       
+          <div class="bottom">2222222222</div>
+          <img alt="cream"  src="./다운로드.png" />
+          </div>
+        </a>
+      </li>
+      <li>
+        <div class="screen">
+        <input  class="product" type="button" value="장바구니">       
+        <div class="bottom">2222222222</div>
+        <img alt="cream"  src="./다운로드.png" />
+        </div>
+      </li>
+      </ul>
+    </div>
     
 
+
+
+
+  
+    <!--모달창  -->
     <div id="modal" class="modal-overlay">
       <div class="modal-window">
         <div class="title">
-          <h2>제품명</h2>
+          <h2>옵션 선택</h2>
+          <strong>제품명</strong>
+          <hr class="solid">
           <table>           
             <tr>
-               <td rowspan="2"><img class="product2" src="./다운로드.png" /></td>
+               <td rowspan="2" id="image"><img class="product2" src="./다운로드.png" /></td>
                <td>color</td>
                <td>
                 <ul>
-                  <li class="white" value= 1>⚫</li>
-                  <li class="black" value= 2>⚪</li>
+                  <!-- input id="a" name="check_ra" type="radio" value="A" onClick="checking()" -->
+                  <li for="check"><input class="black" type="button" value=⚫></li>
+                  <li><input class="white" type="button" value=⚪></li>
+                  <li id="mustColor">[필수] 옵션을 선택</li>
                </ul> 
                </td>
             </tr>
@@ -61,41 +166,46 @@
                   <td> size</td>
                   <td> 
                     <ul id="size">
-                      <li id="size1" value="3">3</li>
-                      <li id="size2" value="5">5</li>
-                      <li id="size3" value="7">7</li>
+                      <li><input type="button" id="size1" value="3"></li>
+                      <li><input type="button" id="size2" value="5"></li>
+                      <li><input type="button" id="size3" value="7"></li>
+                  <li id="mustSize">[필수] 옵션을 선택</li>
                     </ul>
                   </td>
               </tr>
             </tbody>
-          
-        </table>
-        <div id="quantity">
-          <!-- <input  id="minus" type="button" value="-"> -->
-          <input  id="val" type="number" value="1" min="1" max="10">
-          <!-- <input  id="plus" type="button" value="+"> -->
+          </table>
+          <strong>위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</strong>
+        <hr class="dotted">
+        <div id="container">
+          <div id="quantity">
+            <input  id="val" type="number" value="1" min="1" max="10">
+          </div>
+          <div>
+            <ul id="productList"></ul>
+          </div>
         </div>
+        <div id="line"></div>
+          
 
-          <input class="close" id="getItem" type="button"  value="제품담기" />
-          <input class="close" id="closeBasket" type="button" value="취소" />
-        
+       <div id="select">
+         <div id="value2"></div>
+         <div id="container2">
+          <input class="btnStyle1" id="getItem" type="button"  value="제품담기" />
+          <input class="btnStyle2" id="goBasket" type="button"  value="구매하기" />
+          <input class="btnStyle1" id="closeBasket" type="button" value="취소" />
+         </div>
+         </div>
+        </div>
+        <div>
         </div>
       </div>
     </div>
-  
+    </div>
 
-  <div>
-    <a>
-      <div class="screen">
-        <input  class="product" type="button" value="장바구니">       
-        <div class="bottom">2222222222</div>
-        <img   src="./다운로드.png" />
-      </div>
-      <div>
-      </div>
-    </a>
-  </div>
-  
+    <div class="basketContainer">
+
+    </div>
     
   <script src="./test.js"></script>
 
