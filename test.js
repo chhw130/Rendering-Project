@@ -1,4 +1,6 @@
-const basket = document.querySelector(".product");
+const $pro1 = document.querySelector("#pro1");
+const $pro2 = document.querySelector("#pro2");
+const $pro3 = document.querySelector("#pro3");
 const modal = document.querySelector("#modal");
 const modalWindow = document.querySelector(".modal-window");
 const closeBasket = document.querySelector("#closeBasket");
@@ -17,8 +19,8 @@ const $mustColor = document.querySelector("#mustColor");
 const $mustSize = document.querySelector("#mustSize");
 const $line = document.querySelector("#line");
 const $goBasket = document.querySelector("#goBasket");
-const $img1 = document.querySelector(".screen img")
-
+const $img1 = document.querySelector(".screen img");
+const $price = document.querySelector(".informationPrice")
 
 
 const basketData = [
@@ -28,6 +30,7 @@ const basketData = [
 const newbasketData = [{}]
 let imgName = $img1.alt
 let colorData = 0;
+let price = $price.innerText
 let color = "";
 let size = 0;
 let confirmData = document.createElement("div"); //제품담기
@@ -64,13 +67,16 @@ function blackHandler(event) {
 $white.addEventListener("click", whiteHandler);
 $black.addEventListener("click", blackHandler);
 
+
+//모달창 배치
 function modalOn() {
-  //모달창 배치
   modal.style.display = "flex";
   modalWindow.style.display = "flex";
 }
 
-basket.addEventListener("click", modalOn);
+$pro1.addEventListener("click", modalOn);
+$pro2.addEventListener("click", modalOn);
+$pro3.addEventListener("click", modalOn);
 ///
 // function quantityPlus(){
 //     $val.value++
@@ -141,7 +147,6 @@ function getItemHandler() {
     itemInform.innerText = `-${color} 색상 ${size}mm`;
     $productList.appendChild(list);
     itemValue.innerText = `총(수량) : ${$val.value}개`;
-
     $black.style.border = "1px solid ";
     $white.style.border = "1px solid ";
 
@@ -154,8 +159,10 @@ function getItemHandler() {
       {
         id: Math.random(),
         product : imgName,
-        basketSize: size,
+        productSize: size,
         basketColor: color,
+        total : $val.value,
+        productPrice : price
       }
     ;
 
@@ -189,13 +196,57 @@ $black.addEventListener("click", blackHandler);
 
 function goBasketHandler() {
     const $wholeContainer = document.querySelector("#wholeContainer")
+    const $basketContainer = document.querySelector("#basketContainer")
     $wholeContainer.style.display = "none"
+    $basketContainer.style.display = "block"
     const $body = document.querySelector("body")
     $body.style.height = "100%"
-  }
+      
 
+{
+  const $tg = document.querySelector(".tg")
+  for(let i = 0 ; i < newbasketData.length ; i++){
+    const newRow = $tg.insertRow(1)
+    let cell1 = newRow.insertCell(0)
+    let cell2 = newRow.insertCell(1)
+    let cell3 = newRow.insertCell(2)
+    let cell4 = newRow.insertCell(3)
+    let cell5 = newRow.insertCell(4)
+    
+  for(let j = 0 ; j < 5; j++){
+    cell1.innerText = `${newbasketData[j].product}   ${newbasketData[j].productSize}mm`
+    cell2.innerText = newbasketData[j].total
+    cell3.innerText = "2500원"
+    cell4.innerText = newbasketData[j].productPrice
+    cell5.innerText = ""
+  }
+  }
+}
+  }
 $goBasket.addEventListener("click", goBasketHandler);
 
+
+
+// function renderingTable(){
+//   for(let i = 0 ; i < newbasketData.length ; i++){
+//     const $tg = document.querySelector(".tg")
+//     const newRow = $tg.insertRow()
+//     let cell1 = newRow.insertCell(0)
+//     let cell2 = newRow.insertCell(1)
+//     let cell3 = newRow.insertCell(2)
+//     let cell4 = newRow.insertCell(3)
+//     let cell5 = newRow.insertCell(4)
+   
+
+//   for(let i = 0 ; i < 5; i++){
+//     cell1.innerText = `${newbasketData[i].product} ${newbasketData[i].productSize}mm`
+//     cell2.innerText = newbasketData[i].total
+//     cell3.innerText = "2500원"
+//     cell4.innerText = newbasketData[i].productPrice
+//     cell5.innerText = ""
+//   }
+// }
+// }
 /////x버튼 클릭시 요소 삭제
 
 function deleteList(event) {
@@ -207,6 +258,7 @@ function deleteList(event) {
   const deleteDotted = document.querySelector("#line .dotted");
   deleteValue.remove();
   deleteDotted.remove();
+  newbasketData.length = 1
 
   // li.removeChild(li)
 }
@@ -216,7 +268,7 @@ $getItem.addEventListener("click", getItemHandler);
 function modalOff() {
   //취소버튼클릭시 모달창 닫기
   modal.style.display = "none";
-  console.log(newbasketData[2].id)
+  
 }
 closeBasket.addEventListener("click", modalOff);
 
@@ -291,3 +343,7 @@ prevBtn.addEventListener("click", () => {
 window.addEventListener("resize", () => {
   slideWidth = slide.clientWidth;
 });
+
+
+
+

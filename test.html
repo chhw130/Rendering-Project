@@ -5,14 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
-  <body>
+<body>
+    <!-- 장바구니 -->
+    <div id="basketContainer">
+      <span>장바구니</span>
+      <hr>
+      <table class="tg">
+        <thead>
+          <tr>
+            <th >item</th>
+            <th >수량</th>
+            <th class="tg-0pky">배송비</th>
+            <th class="tg-0pky">가격</th>
+            <th class="tg-0pky"></th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td  colspan="2"></td>
+            <td class="end">
+               <div>상품가격</div>
+               <div>배송비</div>
+               <div>회원 할인금액</div>
+               <div>적립예정 포인트</div>
+              </td>
+            <td class="tg-0pky" colspan="2"></td>
+          </tr>
+        </tbody>
+        </table>
+        
+        <div id="order">
+          <input type="button" value="주문하기">
+         <a href="http://127.0.0.1:5500/test.html">
+           <input type="button" value="계속 쇼핑하기">
+          </a>  
+        </div>
+    </div>
+
+
+
       <!--고정 헤더  -->
       <header>
-        
-          <a id="cosLab" href="">COS LAB</a>
-      
-        
-          
+      <a id="cosLab" href="">COS LAB</a>
         <div>
           <div  id="menu"> 
             <a>ABOUT</a>
@@ -33,8 +68,7 @@
       </div>
       </header>
       
-      
-      <!-- 햄버거버튼 구현 -->
+      <!-- 햄버거버튼 -->
       <div>
         <input type="checkbox" id="ham">
         <label for="ham">
@@ -42,9 +76,9 @@
           <span></span>
           <span></span>
 
-      <!--햄버거버튼 사이드바  -->
+      <!--햄버거버튼 드롭바  -->
         </label>
-        <div class="sidebar">
+        <div class="dropbar">
           <div>
             <div>
               <div  id="menu"> 
@@ -65,9 +99,11 @@
           </div>
           </div>
       </div>
-    <div id="wholeContainer">
-    <div id="container3">
 
+
+      <!-- 메인부터 footer까지 wholeContainer로 묶음 -->
+    <div id="wholeContainer">
+      <div id="container3">
 
       <!-- 상단섹션 -->
       <div class="slide">
@@ -99,50 +135,75 @@
                     고보습 마스크 시트를 만나보세요</span>
             </div>
         </div>
-
-        <!-- <div class="slide_item">5</div> -->
         <div class="slide_prev_button slide_button">◀</div>
         <div class="slide_next_button slide_button">▶</div>
     </div>
 </div>
     
     <!-- 장바구니에 담을 상품 이미지 -->
-  <div>
+  <div id="bestSeller">
+    <div>
+      <span>베스트 셀러</span>
+      <span>Cos LAB에서만 단독 판매</span>
+    </div>
     <ul>
-      <li>
+      <li class="inform">
         <a>
           <div class="screen">
-            <input  class="product" type="button" value="장바구니">       
-            <div class="bottom">2222222222</div>
-            <img alt="cream"  src="./다운로드.png" />
+            <img alt="샤인 오드퍼퓸" class="productImg"  src="./8b70aa011376b427c09f14a9a0d54a81.jpg" />
+            <img class="product" id="pro1" src="./clickImg.png">       
+          </div>
+          <div class="information">
+            <span>샤인 오드퍼퓸</span>
+            <span>#나이트 케어 세트</span>
+            <span class="informationPrice">38,000</span>
           </div>
       </a>
       </li>
-      <li>
+      <li class="inform">
         <a>
           <div class="screen">
-          <input  class="product" type="button" value="장바구니">       
-          <div class="bottom">2222222222</div>
-          <img alt="cream"  src="./다운로드.png" />
+            <img alt="퍼스트 에센스 메가세트" class="productImg"  src="./d510872200948af404a55e8d8ef54dfe.jpg" />
+            <img class="product" id="pro2" src="./clickImg.png">       
+          </div>
+            <div class="information">
+              <span>퍼스트 에센스 메가세트</span>
+              <span>#데이 앤 나이트 케어 세트</span>
+              <span>18,900</span>
           </div>
         </a>
       </li>
-      <li>
-        <div class="screen">
-        <input  class="product" type="button" value="장바구니">       
-        <div class="bottom">2222222222</div>
-        <img alt="cream"  src="./다운로드.png" />
-        </div>
+      <li class="inform">
+        <a>
+          <div class="screen">
+            <img alt="나이트 리페어 싱크로나이즈드" class="productImg"  src="./d96355ce399b7d14e142cfd7bc0d6506.jpg" />
+            <img class="product" id="pro3" src="./clickImg.png">       
+          </div>
+          <div class="information">
+            <span>나이트 리페어 싱크로나이즈드</span>
+            <span>#나이트 케어 세트</span>
+            <span>21,000</span>
+          </div>
+        </a>
       </li>
+      <li class="inform">
+        <a>
+          <div class="screen">
+            <img alt="메가 버섯 리뉴얼 세럼" class="productImg"  src="./bc9fcc9ac712ee0fba2883fa3f5a3a16.jpg" />
+            <img class="product" id="pro4" src="./clickImg.png">       
+          </div>
+          <div class="information">
+            <span>메가 버섯 리뉴얼 세럼</span>
+            <span>#꽃송이버섯의 영양분으로 탄력 케어</span>
+            <span>15,750</span>
+          </div>
+        </a>
+      </li>      
       </ul>
     </div>
     
 
-
-
-
-  
-    <!--모달창  -->
+    <!--담고싶은 상품에 장바구니 버튼 클릭시 화면(모달)-->
     <div id="modal" class="modal-overlay">
       <div class="modal-window">
         <div class="title">
@@ -151,11 +212,10 @@
           <hr class="solid">
           <table>           
             <tr>
-               <td rowspan="2" id="image"><img class="product2" src="./다운로드.png" /></td>
+               <td rowspan="2" id="image"></td>
                <td>color</td>
                <td>
                 <ul>
-                  <!-- input id="a" name="check_ra" type="radio" value="A" onClick="checking()" -->
                   <li for="check"><input class="black" type="button" value=⚫></li>
                   <li><input class="white" type="button" value=⚪></li>
                   <li id="mustColor">[필수] 옵션을 선택</li>
@@ -165,7 +225,7 @@
               <tr>
                   <td> size</td>
                   <td> 
-                    <ul id="size">
+                    <ul>
                       <li><input type="button" id="size1" value="3"></li>
                       <li><input type="button" id="size2" value="5"></li>
                       <li><input type="button" id="size3" value="7"></li>
@@ -175,7 +235,7 @@
               </tr>
             </tbody>
           </table>
-          <strong>위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</strong>
+          <strong id="select1">위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</strong>
         <hr class="dotted">
         <div id="container">
           <div id="quantity">
@@ -185,9 +245,7 @@
             <ul id="productList"></ul>
           </div>
         </div>
-        <div id="line"></div>
-          
-
+        <div id="line"></div>   
        <div id="select">
          <div id="value2"></div>
          <div id="container2">
@@ -203,10 +261,7 @@
     </div>
     </div>
 
-    <div class="basketContainer">
-
-    </div>
-    
+        
   <script src="./test.js"></script>
 
   </body>
