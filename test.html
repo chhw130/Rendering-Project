@@ -37,8 +37,7 @@
         
         <div id="order">
           <input type="button" value="주문하기">
-         <a href="http://127.0.0.1:5500/test.html">
-           <input type="button" value="계속 쇼핑하기">
+           <input id="continue" type="button" value="계속 쇼핑하기">
           </a>  
         </div>
     </div>
@@ -64,6 +63,7 @@
             <a>REVIEW</a>
             <a>Language</a>
             <a>한국어</a>
+            <img id="basketImg"src="./image/basket.png">
           </div>
       </div>
       </header>
@@ -75,6 +75,7 @@
           <span></span>
           <span></span>
           <span></span>
+          
 
       <!--햄버거버튼 드롭바  -->
         </label>
@@ -95,50 +96,33 @@
                 </div>
                 <a>EVENT</a>
               </div>
+            </div>
           </div>
-          </div>
-          </div>
+        </div>
       </div>
-
-
+      
+      
+    
       <!-- 메인부터 footer까지 wholeContainer로 묶음 -->
     <div id="wholeContainer">
       <div id="container3">
+        <div id="slideshow">
+          <div class="slide_item">
+              <img src="./image/main_slide1.jpg">
+          </div>
+          <div class="slide_item">
+              <img src="./image/main_slide2.jpg">
+          </div>
+          <div class="slide_item">
+              <img src="./image/main_slide3.jpg">
+          </div>
+  
+          <div class="slide_prev_button slide_button">◀</div>
+          <div class="slide_next_button slide_button">▶</div>
+      </div>
+  
+      </div>
 
-      <!-- 상단섹션 -->
-      <div class="slide">
-        <div class="slide_item">
-            <img src="banner1.jpg">
-            <div class="text">
-                <h3>당신의 하루를 <br>
-                    사소하게 넘기지 마세요</h3>
-                <span>탈모증상완화에 도움을 주고 볼륨을 살려줍니다. <br>
-                    묵은 각질 및 노폐물 완전 세정</span>
-            </div>
-        </div>
-
-        <div class="slide_item">
-            <img src="banner2.jpg">
-            <div class="text">
-                <h3>옴므랩 올인원<br>
-                    프레시 스킨케어 세트</h3>
-                <span>촉촉한 에멀전 타입으로 유분과 수분의 밸런스를 조절 <br>
-                    피부에 유분을 잡아주고 수분은 채워줍니다.</span>
-            </div>
-        </div>
-        <div class="slide_item">
-            <img src="banner3.jpg">
-            <div class="text">
-                <h3>세라마이딘<br>
-                    페이셜 베리어 마스크</h3>
-                <span>수분 충전과 영양 케어를 한 번에 도와주는 <br>
-                    고보습 마스크 시트를 만나보세요</span>
-            </div>
-        </div>
-        <div class="slide_prev_button slide_button">◀</div>
-        <div class="slide_next_button slide_button">▶</div>
-    </div>
-</div>
     
     <!-- 장바구니에 담을 상품 이미지 -->
   <div id="bestSeller">
@@ -150,8 +134,8 @@
       <li class="inform">
         <a>
           <div class="screen">
-            <img alt="샤인 오드퍼퓸" class="productImg"  src="./8b70aa011376b427c09f14a9a0d54a81.jpg" />
-            <img class="product" id="pro1" src="./clickImg.png">       
+            <img alt="샤인 오드퍼퓸" class="productImg"  src="./image/product1.jpg" />
+            <img class="product" id="pro1" src="./image/basket.png">       
           </div>
           <div class="information">
             <span>샤인 오드퍼퓸</span>
@@ -163,8 +147,8 @@
       <li class="inform">
         <a>
           <div class="screen">
-            <img alt="퍼스트 에센스 메가세트" class="productImg"  src="./d510872200948af404a55e8d8ef54dfe.jpg" />
-            <img class="product" id="pro2" src="./clickImg.png">       
+            <img alt="퍼스트 에센스 메가세트" class="productImg"  src="./image/product2.jpg" />
+            <img class="product" id="pro2" src="./image/basket.png">       
           </div>
             <div class="information">
               <span>퍼스트 에센스 메가세트</span>
@@ -176,8 +160,8 @@
       <li class="inform">
         <a>
           <div class="screen">
-            <img alt="나이트 리페어 싱크로나이즈드" class="productImg"  src="./d96355ce399b7d14e142cfd7bc0d6506.jpg" />
-            <img class="product" id="pro3" src="./clickImg.png">       
+            <img alt="나이트 리페어 싱크로나이즈드" class="productImg"  src="./image/product3.jpg" />
+            <img class="product" id="pro3" src="./image/basket.png">       
           </div>
           <div class="information">
             <span>나이트 리페어 싱크로나이즈드</span>
@@ -189,8 +173,8 @@
       <li class="inform">
         <a>
           <div class="screen">
-            <img alt="메가 버섯 리뉴얼 세럼" class="productImg"  src="./bc9fcc9ac712ee0fba2883fa3f5a3a16.jpg" />
-            <img class="product" id="pro4" src="./clickImg.png">       
+            <img alt="메가 버섯 리뉴얼 세럼" class="productImg"  src="./image/product4.jpg" />
+            <img class="product" id="pro4" src="./image/basket.png">       
           </div>
           <div class="information">
             <span>메가 버섯 리뉴얼 세럼</span>
@@ -201,7 +185,125 @@
       </li>      
       </ul>
     </div>
-    
+
+    <div class="best_it">
+      <div class="titlArea">
+       <div class="top">
+        <div class="cont_1 under_line">
+          <a href="#"><input id="a" name="check_ra" type="radio" value="A"> 
+          <label for="check"><p id="best" onClick="checking1()">#보다난 베스트</p></label></a>
+        </div>
+        <div class="cont_1">
+          <a href="#"><input id="b" name="check_ra" type="radio" value="B"> 
+          <label for="check"><p id="pick" onClick="checking2()">#MD's pick</p></label></a>
+        </div>
+        <div class="cont_1">
+          <a href="#"><input id="c" name="check_ra" type="radio" value="C"> 
+          <label for="check"><p id="today" onClick="checking3()">#투데이 스페셜</p></label></a>
+        </div>
+        <div class="cont_1">
+          <a href="#"><input id="d" name="check_ra" type="radio" value="D"> 
+          <label for="check"><p id="edited" onClick="checking4()">#Edited For You</p></label></a>
+        </div>
+       </div>
+      </div>
+      <div class="contArea" id="show">
+        <div class="main_slide">
+          <img src="./image/pick_item1.jpg" id="p" alt="">
+        </div>
+        <!-- <img id="p" src="./image/pick_item.jpg" alt=""> -->
+        <!-- <div class="show_it"></div>
+        <div class="show_it"></div>
+        <div class="show_it"></div>  -->
+        <ul class="slide_pagination2">
+          <li id="e" class="none"><a href="#"></a></li>
+          <li id="f" class="none"><a href="#"></a></li>
+          <li id="g" class="none"><a href="#"></a></li>
+          <li id="h" class="none"><a href="#"></a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="slide_wrap">
+      <div class="slide_cot">
+        <div class="slide_box slide_left">
+          <div class="box_con" id="trans_box">
+            <p class="big_p">오직 보다난에서만<br>드리는 다양한 멤버십 혜택</p>
+            <p>보다난의 시그니처 멤머십 혜택<br>지금 회원가입하고 다양한 혜택을 챙겨가세요.</p>
+            <div class="view_bt"><p>View Detail  +</p></div>
+          </div>
+        </div>
+        <div class="slide_box slide_right">
+          <div class="inner-list">
+            <div class="inner">
+              <img src="./image/slide_1.jpg" alt="">
+            </div>
+            <div class="inner">
+              <img src="./image/slide_2.jpg" alt="">
+            </div>
+            <div class="inner">
+              <img src="./image/slide_3.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="slide_prev_button slide_button" >◀</div>
+        <div class="slide_next_button slide_button" >▶</div>
+      </div>   
+    </div>
+
+    <div id="container4">
+      <div id="instagram">
+        <img  src="./image/instargram.png">
+        
+      </div>
+      <ul id="instagramImg">
+        <li>
+          <a href="https://www.instagram.com/p/CmMl2ovrYdQ/" target="_blank">
+            <img src="./image/instarImg1.JPG">      
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/CmMl2ovrYdQ/" target="_blank">
+            <img src="./image/instarImg2.jpg">      
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/Ckyu-XdulxU/" target="_blank" >
+            <img src="./image/InstarImg3.jpg">      
+
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/CmPnTAlOlVV/" target="_blank">
+            <img src="./image/instarImg4.jpg">      
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/CmPm84dKrOM/" target="_blank">
+            <img src="./image/instarImg5.jpg">      
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/ClgIeJrtvWK/" target="_blank">
+            <img src="./image/instarImg6.jpg">      
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/ClWnHioL9tg/" target="_blank">
+            <img src="./image/instarImg7.jpg">      
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/p/CmOkfLvsIao/?hl=af" target="_blank">
+            <img src="./image/instarImg8.jpg">      
+          </a>
+        </li>
+        
+      </ul>
+        
+    </div>
+  
 
     <!--담고싶은 상품에 장바구니 버튼 클릭시 화면(모달)-->
     <div id="modal" class="modal-overlay">
@@ -261,8 +363,78 @@
     </div>
     </div>
 
-        
-  <script src="./test.js"></script>
 
+
+
+    <div id="footer">
+
+        <hr>
+        <div class="bottom_index">
+            <a href="//naver.com">홈</a>
+            <a href="//daum.net">회사소개</a>
+            <a href="//google.com">이용약관</a>
+            <a href="//d.cafe24.com/preview/?productCode=PTMD538372&frame=P"><strong>개인정보처리방침</strong></a>
+        </div>
+
+
+        <div class="company_info">
+
+            <div class="info">
+
+                <div class="logo">
+                    <div>
+                        <img src="./image/bottom_logo.png">
+                    </div>
+                    <div>
+                        <span>고객센터: 1577-1111</span>
+                        <span><i>평일 09:00 - 18:00 (토, 일, 공휴일 휴무)</i></span>
+                    </div>
+                </div>
+
+                <div class="company">
+                    <div>
+                        <span>상호명: 보다난</span>
+                        |
+                        <span>대표자: 김땡땡</span>
+                        |
+                        <span>사업자등록번호: 123-45-67890</span>
+                        |
+                        <span>통신판매업신고번호: 987-65-43210</span>
+                    </div>
+                </div>
+                <div class="address">
+                  <div>
+                    <span>주소:
+                      서울특별시 서초구 강남대로 99길 45 (잠원동)</span>
+                        |
+                        <span>개인정보보호책임자:
+                            김땡땡(expand_a@naver.com)</span>
+                    </div>
+                  </div>
+
+
+                <div class="copyright">
+                    <p>※ 보다난에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서, 무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.
+                  </p>
+                    <p>
+                      Copyright © 2022 Bodanan. All rights reserved.
+                    </p>
+                </div>
+                
+              </div>
+          </div>
+      </div>
+
+
+
+  <script src="./js파일.js/checking.js"></script>
+  <script src="./js파일.js/main.js"></script>
+  <script src="./js파일.js/color.js"></script>  
+  <script src="./js파일.js/size.js"></script>      
+  <script src="./mainFunction.js"></script>
+  <script src="./js파일.js/modal.js"></script>
+  <script src="./js파일.js/window.js"></script>
+  <script src="./js파일.js/recomman.js"></script>
+  <script src="./js파일.js/"></script>
   </body>
 </html>
