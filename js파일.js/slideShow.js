@@ -10,8 +10,8 @@ inners.forEach((inner) => {
 innerList.style.width = `${outer.clientWidth * inners.length}px`; // innerList의 width를 inner의 width * inner의 개수로 만들기
 
 /* 버튼에 이벤트 등록 */
-const buttonLeft = document.querySelector('.slide_prev_button');
-const buttonRight = document.querySelector('.slide_next_button');
+const buttonLeft = document.querySelector('.slide_left_button');
+const buttonRight = document.querySelector('.slide_right_button');
 
 buttonLeft.addEventListener('click', () => {
   inners.forEach((inner) => {
@@ -101,7 +101,3 @@ element.addEventListener("click", function(e) {
   element.classList.remove("animationnSlide");
   element.classList.add("animationnSlide");
 }, false);
-
-
-
-

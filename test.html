@@ -13,26 +13,42 @@
       <table class="tg">
         <thead>
           <tr>
-            <th >item</th>
-            <th >수량</th>
-            <th class="tg-0pky">배송비</th>
-            <th class="tg-0pky">가격</th>
-            <th class="tg-0pky"></th>
+            <th>item</th>
+            <th>수량</th>
+            <th>배송비</th>
+            <th>가격</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          
           <tr>
-            <td  colspan="2"></td>
+            <td colspan="2"></td>
             <td class="end">
                <div>상품가격</div>
                <div>배송비</div>
                <div>회원 할인금액</div>
-               <div>적립예정 포인트</div>
+               <div>적립예정 포인트3%</div>
               </td>
-            <td class="tg-0pky" colspan="2"></td>
+            <td class="end"  colspan="2">
+              <div id="totalPrice">0원</div>
+              <div>무료</div>
+              <div>0원</div>
+              <div id="discount">0원</div>
+            </td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr id="tableFooter">
+            <td colspan="2"></td>
+            <td class="end">
+               <div>결제금액</div>
+              </td>
+            <td class="end"  colspan="2">
+              <div id="endPrice"></div>
+            </td>
+          </tr>
+          
+        </tfoot>
         </table>
         
         <div id="order">
@@ -108,13 +124,13 @@
       <div id="container3">
         <div id="slideshow">
           <div class="slide_item">
-              <img src="./image/main_slide1.jpg">
+              <img src="./image/main_slide1.png">
           </div>
           <div class="slide_item">
-              <img src="./image/main_slide2.jpg">
+              <img src="./image/main_slide2.png">
           </div>
           <div class="slide_item">
-              <img src="./image/main_slide3.jpg">
+              <img src="./image/main_slide3.png">
           </div>
   
           <div class="slide_prev_button slide_button">◀</div>
@@ -123,86 +139,93 @@
   
       </div>
 
-    
-    <!-- 장바구니에 담을 상품 이미지 -->
-  <div id="bestSeller">
-    <div>
-      <span>베스트 셀러</span>
-      <span>Cos LAB에서만 단독 판매</span>
-    </div>
-    <ul>
-      <li class="inform">
-        <a>
-          <div class="screen">
-            <img alt="샤인 오드퍼퓸" class="productImg"  src="./image/product1.jpg" />
-            <img class="product" id="pro1" src="./image/basket.png">       
-          </div>
-          <div class="information">
-            <span>샤인 오드퍼퓸</span>
-            <span>#나이트 케어 세트</span>
-            <span class="informationPrice">38,000</span>
-          </div>
-      </a>
-      </li>
-      <li class="inform">
-        <a>
-          <div class="screen">
-            <img alt="퍼스트 에센스 메가세트" class="productImg"  src="./image/product2.jpg" />
-            <img class="product" id="pro2" src="./image/basket.png">       
-          </div>
-            <div class="information">
-              <span>퍼스트 에센스 메가세트</span>
-              <span>#데이 앤 나이트 케어 세트</span>
-              <span>18,900</span>
-          </div>
-        </a>
-      </li>
-      <li class="inform">
-        <a>
-          <div class="screen">
-            <img alt="나이트 리페어 싱크로나이즈드" class="productImg"  src="./image/product3.jpg" />
-            <img class="product" id="pro3" src="./image/basket.png">       
-          </div>
-          <div class="information">
-            <span>나이트 리페어 싱크로나이즈드</span>
-            <span>#나이트 케어 세트</span>
-            <span>21,000</span>
-          </div>
-        </a>
-      </li>
-      <li class="inform">
-        <a>
-          <div class="screen">
-            <img alt="메가 버섯 리뉴얼 세럼" class="productImg"  src="./image/product4.jpg" />
-            <img class="product" id="pro4" src="./image/basket.png">       
-          </div>
-          <div class="information">
-            <span>메가 버섯 리뉴얼 세럼</span>
-            <span>#꽃송이버섯의 영양분으로 탄력 케어</span>
-            <span>15,750</span>
-          </div>
-        </a>
-      </li>      
-      </ul>
-    </div>
 
+    <!-- 장바구니에 담을 상품 이미지 -->
+    <div id="bestSeller">
+      <div>
+        <span>베스트 셀러</span>
+        <span>Cos LAB에서만 단독 판매</span>
+      </div>
+      <ul>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="샤인 오드퍼퓸" class="productImg"  src="./image/product1.jpg" />
+              <img class="product" id="pro1" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>샤인 오드퍼퓸</span>
+              <span>#나이트 케어 세트</span>
+              <span class="informationPrice">38,000</span>
+            </div>
+        </a>
+        </li>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="퍼스트 에센스 메가세트" class="productImg"  src="./image/product2.jpg" />
+              <img class="product" id="pro2" src="./image/basket.png">       
+            </div>
+              <div class="information">
+                <span>퍼스트 에센스 메가세트</span>
+                <span>#데이 앤 나이트 케어 세트</span>
+                <span>18,900</span>
+            </div>
+          </a>
+        </li>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="나이트 리페어 싱크로나이즈드" class="productImg"  src="./image/product3.jpg" />
+              <img class="product" id="pro3" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>나이트 리페어 싱크로나이즈드</span>
+              <span>#나이트 케어 세트</span>
+              <span>21,000</span>
+            </div>
+          </a>
+        </li>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="메가 버섯 리뉴얼 세럼" class="productImg"  src="./image/product4.jpg" />
+              <img class="product" id="pro4" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>메가 버섯 리뉴얼 세럼</span>
+              <span>#꽃송이버섯의 영양분으로 탄력 케어</span>
+              <span>15,750</span>
+            </div>
+          </a>
+        </li>      
+        </ul>
+      </div>
+  
+
+
+
+
+
+    
+      <!-- 세번째 단락 -->
     <div class="best_it">
       <div class="titlArea">
        <div class="top">
         <div class="cont_1 under_line">
-          <a href="#"><input id="a" name="check_ra" type="radio" value="A"> 
+          <a href="#" onclick="return false;"><input id="a" name="check_ra" type="radio" value="A"> 
           <label for="check"><p id="best" onClick="checking1()">#보다난 베스트</p></label></a>
         </div>
         <div class="cont_1">
-          <a href="#"><input id="b" name="check_ra" type="radio" value="B"> 
+          <a href="#" onclick="return false;"><input id="b" name="check_ra" type="radio" value="B"> 
           <label for="check"><p id="pick" onClick="checking2()">#MD's pick</p></label></a>
         </div>
         <div class="cont_1">
-          <a href="#"><input id="c" name="check_ra" type="radio" value="C"> 
+          <a href="#" onclick="return false;"><input id="c" name="check_ra" type="radio" value="C"> 
           <label for="check"><p id="today" onClick="checking3()">#투데이 스페셜</p></label></a>
         </div>
         <div class="cont_1">
-          <a href="#"><input id="d" name="check_ra" type="radio" value="D"> 
+          <a href="#" onclick="return false;"><input id="d" name="check_ra" type="radio" value="D"> 
           <label for="check"><p id="edited" onClick="checking4()">#Edited For You</p></label></a>
         </div>
        </div>
@@ -211,20 +234,101 @@
         <div class="main_slide">
           <img src="./image/pick_item1.jpg" id="p" alt="">
         </div>
-        <!-- <img id="p" src="./image/pick_item.jpg" alt=""> -->
-        <!-- <div class="show_it"></div>
-        <div class="show_it"></div>
-        <div class="show_it"></div>  -->
-        <ul class="slide_pagination2">
-          <li id="e" class="none"><a href="#"></a></li>
-          <li id="f" class="none"><a href="#"></a></li>
-          <li id="g" class="none"><a href="#"></a></li>
-          <li id="h" class="none"><a href="#"></a></li>
+       </div>
+    </div>
+    <div id="slideItem">
+      <ul class="slide_pagination2">
+        <li id="e" class="none"><a href="#"></a></li>
+        <li id="f" class="none"><a href="#"></a></li>
+        <li id="g" class="none"><a href="#"></a></li>
+        <li id="h" class="none"><a href="#"></a></li>
+      </ul>
+    </div>
+  
+
+
+
+
+    <!-- 네번째 단락 -->
+    <div id="bestSeller">
+      <div>
+        <span>오직 온라인에서만</span>
+        <span>오직 온라인에서만 만날 수 있는</span>
+      </div>
+      <ul>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="바이오 카탈리스크" class="productImg"  src="./image/online.jpg" />
+              <img class="product" id="pro1" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>바이오 카탈리스크</span>
+              <span>#럭셔리 보호 데이 크림</span>
+              <span class="informationPrice">38,000</span>
+            </div>
+        </a>
+        </li>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="인피니티 바이오 리뉴얼 나이트" class="productImg"  src="./image/online2.jpg" />
+              <img class="product" id="pro2" src="./image/basket.png">       
+            </div>
+              <div class="information">
+                <span>인피니티 바이오 리뉴얼 나이트</span>
+                <span>#나이트 재생 크림</span>
+                <span>18,900</span>
+            </div>
+          </a>
+        </li>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="나이트 수퍼 부스트 세럼" class="productImg"  src="./image/online3.jpg" />
+              <img class="product" id="pro3" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>나이트 수퍼 부스트 세럼</span>
+              <span>#민감성 피부 전용 세럼</span>
+              <span>21,000</span>
+            </div>
+          </a>
+        </li>
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="여행 케이스 세트" class="productImg"  src="./image/online4.jpg" />
+              <img class="product" id="pro4" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>여행 케이스 세트</span>
+              <span>#수납공간 많은 화장품 가방</span>
+              <span>15,750</span>
+            </div>
+          </a>
+        </li>      
+        <li class="inform">
+          <a>
+            <div class="screen">
+              <img alt="스무스 바디 브러쉬" class="productImg"  src="./image/online5.jpg" />
+              <img class="product" id="pro4" src="./image/basket.png">       
+            </div>
+            <div class="information">
+              <span>스무스 바디 브러쉬</span>
+              <span>#피부 톤과 질감 개선</span>
+              <span>15,750</span>
+            </div>
+          </a>
+        </li>      
         </ul>
       </div>
-    </div>
+  
 
 
+
+
+<!-- 멤버십 혜택 -->
     <div class="slide_wrap">
       <div class="slide_cot">
         <div class="slide_box slide_left">
@@ -247,11 +351,17 @@
             </div>
           </div>
         </div>
-        <div class="slide_prev_button slide_button" >◀</div>
-        <div class="slide_next_button slide_button" >▶</div>
+        <!-- 수정---------------------------------------------------->
+        <div class="slide_left_button slide_button" >◀</div>
+        <div class="slide_right_button slide_button" >▶</div>
+        <!-- 수정---------------------------------------------------->
       </div>   
     </div>
 
+
+
+
+    <!-- 인스타그램 -->
     <div id="container4">
       <div id="instagram">
         <img  src="./image/instargram.png">
@@ -314,7 +424,7 @@
           <hr class="solid">
           <table>           
             <tr>
-               <td rowspan="2" id="image"></td>
+               <td rowspan="2" id="image"><img src="./image/product1.jpg"></td>
                <td>color</td>
                <td>
                 <ul>
@@ -337,7 +447,7 @@
               </tr>
             </tbody>
           </table>
-          <strong id="select1">위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</strong>
+          <strong id="select1">위 선택박스를 선택하시면 아래에 상품이 추가됩니다.</strong>
         <hr class="dotted">
         <div id="container">
           <div id="quantity">
@@ -365,67 +475,45 @@
 
 
 
+<!-- 푸터 -->
+<div id="bottom_line">
+  <ul class="bottom_index">
+      <li><a href="//naver.com">홈</a></li>
+      <li><a href="//daum.net">회사소개</a></li>
+      <li><a href="//google.com">이용약관</a></li>
+      <li><a href="//d.cafe24.com/preview/?productCode=PTMD538372&frame=P"><strong>개인정보처리방침</strong></a></li>
+  </ul>
 
-    <div id="footer">
-
-        <hr>
-        <div class="bottom_index">
-            <a href="//naver.com">홈</a>
-            <a href="//daum.net">회사소개</a>
-            <a href="//google.com">이용약관</a>
-            <a href="//d.cafe24.com/preview/?productCode=PTMD538372&frame=P"><strong>개인정보처리방침</strong></a>
-        </div>
-
-
-        <div class="company_info">
-
-            <div class="info">
-
-                <div class="logo">
-                    <div>
-                        <img src="./image/bottom_logo.png">
-                    </div>
-                    <div>
-                        <span>고객센터: 1577-1111</span>
-                        <span><i>평일 09:00 - 18:00 (토, 일, 공휴일 휴무)</i></span>
-                    </div>
-                </div>
-
-                <div class="company">
-                    <div>
-                        <span>상호명: 보다난</span>
-                        |
-                        <span>대표자: 김땡땡</span>
-                        |
-                        <span>사업자등록번호: 123-45-67890</span>
-                        |
-                        <span>통신판매업신고번호: 987-65-43210</span>
-                    </div>
-                </div>
-                <div class="address">
-                  <div>
-                    <span>주소:
-                      서울특별시 서초구 강남대로 99길 45 (잠원동)</span>
-                        |
-                        <span>개인정보보호책임자:
-                            김땡땡(expand_a@naver.com)</span>
-                    </div>
-                  </div>
-
-
-                <div class="copyright">
-                    <p>※ 보다난에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서, 무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.
-                  </p>
-                    <p>
-                      Copyright © 2022 Bodanan. All rights reserved.
-                    </p>
-                </div>
-                
-              </div>
-          </div>
+  <div class="cs_logo">
+      
+          <img src="./image/bottom_logo.png">
+      
+      
+          <span class="cs">고객센터: 1577-1111</span>
+          <span class="cs_time">평일 09:00 - 18:00 (토, 일, 공휴일 휴무)</span>
       </div>
+  
 
+  <div class="company_info">
+      
+              <span><a class="color">상호명</a> / 보다난  <a class="color">&nbsp; 대표자</a> / 보다난 <a class="color">&nbsp;사업자등록번호</a> / 123-456-78945 <a class="color">&nbsp;고객센터</a> / 1588-0000 <a class="color">&nbsp;주소</a> / 06532 서울특별시 강남구</span>
+              
+              
+              <span class="ft_index"><a class="color"><br>통신판매업신고번호</a> / 987-65-43210 <a class="color">&nbsp;주소</a> / 서울특별시 서초구 강남대로 99길 45 (잠원동) <a class="color">&nbsp;개인정보보호책임자</a> / 김땡땡(expand_a@naver.com) </span>
+              
+             
+  </div>  
+            
+  <div class="copyright">
+      <p>※ 보다난에서 제공하는 모든 컨텐츠는 저작권법에 보호받는 저작물로서, 무단으로 복제, 배포하는 경우에는 저작권법에 의하여 처벌을 받을 수 있습니다.</p>
 
+      
+      <p>
+          Copyright © 2022 Bodanan. All rights reserved.
+      </p>
+  </div>
+  </div>
+</div>
 
   <script src="./js파일.js/checking.js"></script>
   <script src="./js파일.js/main.js"></script>
@@ -434,7 +522,7 @@
   <script src="./mainFunction.js"></script>
   <script src="./js파일.js/modal.js"></script>
   <script src="./js파일.js/window.js"></script>
-  <script src="./js파일.js/recomman.js"></script>
+  <script src="./js파일.js/slideShow.js"></script>
   <script src="./js파일.js/"></script>
   </body>
 </html>

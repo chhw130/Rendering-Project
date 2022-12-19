@@ -11,15 +11,18 @@ const $basketImg = document.querySelector("#basketImg")
 const $continue = document.querySelector("#continue")
 const $wholeContainer = document.querySelector("#wholeContainer")
 const $basketContainer = document.querySelector("#basketContainer")
-    
+const $totalPrice = document.querySelector("#totalPrice")
+const $discount = document.querySelector("#discount")
+const $endPrice = document.querySelector("#endPrice")
 
 
 const basketData = [
   {},
 ];
-const newbasketData = [{}]
-let imgName = $img.alt
-let price = $price.innerText
+const newbasketData = [{}];
+let imgName = $img.alt;
+let price = parseInt($price.innerText) *1000;
+let totalPrice = 0
 
 function deleteList(event) {
   const li = event.target.parentElement;
@@ -103,6 +106,7 @@ function goBasketHandler() {
     $basketContainer.style.display = "block"
     const $body = document.querySelector("body")
     $body.style.height = "100%"
+    window.scrollTo({top:0, behavior: "smooth"})
 
     $productList.firstChild.remove()
     const deleteValue = document.querySelector("#value2 span");
@@ -110,11 +114,11 @@ function goBasketHandler() {
     deleteValue.remove();
     deleteDotted.remove();
     
-      
+    totalPrice = 0
 
   if(newbasketData.length > 1){
     const $tg = document.querySelector(".tg")
-  for(let i = 0 ; i < newbasketData.length ; i++){
+  for(let i = 0 ; i < 1 ; i++){
     const newRow = $tg.insertRow(1)
     let cell1 = newRow.insertCell(0)
     let cell2 = newRow.insertCell(1)
@@ -122,20 +126,30 @@ function goBasketHandler() {
     let cell4 = newRow.insertCell(3)
     let cell5 = newRow.insertCell(4)
     
-  for(let j = 0 ; j < 5; j++){
+  for(let j = 1 ; j < newbasketData.length+1; j++){
     cell1.innerText = `${newbasketData[j].product}   ${newbasketData[j].productSize}mm ${newbasketData[j].basketColor}`
     cell2.innerText = newbasketData[j].total
-    cell3.innerText = "2500원"
+    cell3.innerText = "무료"
+    let itemPrice = newbasketData[j].productPrice*newbasketData[j].total
     cell4.innerText = newbasketData[j].productPrice
     cell5.innerText = ""
+    totalPrice += itemPrice
+    $totalPrice.innerText = `${totalPrice}원`
+    let point = totalPrice*0.003
+    $discount.innerText = `${point}포인트`
+    $endPrice.innerText = `${totalPrice}원`
   }
   
 }
   }else{
     alert("장바구니에 담긴 상품이 없습니다.")
   }
+
   
-  }
+  
+}
+
+
 $goBasket.addEventListener("click", goBasketHandler);
 
 
@@ -151,8 +165,8 @@ function continueHandler(){
   $wholeContainer.style.display = "block"
     $basketContainer.style.display = "none"
     modal.style.display = "none"
+    window.scrollTo({top: 0, behavior: "smooth"})
     
 }
 
 $continue.addEventListener("click", continueHandler)
-
